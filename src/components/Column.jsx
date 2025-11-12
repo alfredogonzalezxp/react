@@ -1,6 +1,7 @@
 import { useDroppable } from '@dnd-kit/core';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import TaskCard from './TaskCard';
+import AddTask from './AddTask';
 
 const Column = ({ column, tasks }) => {
   const { setNodeRef } = useDroppable({ id: column.id });
@@ -14,6 +15,7 @@ const Column = ({ column, tasks }) => {
             <TaskCard key={task.id} task={task} />
           ))}
         </div>
+        <AddTask columnId={column.id} />
       </SortableContext>
     </div>
   );
